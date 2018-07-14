@@ -20,6 +20,7 @@ RUN set -ex \
 	&& rm -rf /tmp/*
 
 # create data directory
+# To speed up sync process: https://bootstrap.viacoin.org/
 ENV VIACOIN_DATA /data
 RUN mkdir "$VIACOIN_DATA" \
 	&& chown -R viacoin:viacoin "$VIACOIN_DATA" \
