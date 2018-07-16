@@ -16,7 +16,7 @@ RUN set -ex \
 	&& cd /tmp \
 	&& wget -qO viacoin.tar.gz "$VIACOIN_URL" \
 	&& echo "$VIACOIN_SHA256 viacoin.tar.gz" | sha256sum -c - \
-	&& tar -xzvf viacoin.tar.gz -C /usr/local/bin --exclude=*-qt \
+	&& tar -xzvf viacoin.tar.gz -C /usr/local --strip-components=1 --exclude=*-qt \
 	&& rm -rf /tmp/*
 
 # create data directory
